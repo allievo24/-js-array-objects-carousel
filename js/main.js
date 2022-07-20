@@ -59,16 +59,29 @@ avanti.addEventListener('click',
     function () {
         listaImage[imagVisibile].classList.remove('show');
         imgAttiva[imagVisibile].classList.remove('attiva');
+        
+        /*ciclo infinito*/
+        if(imagVisibile == images.length-1){
+            imagVisibile = 0
 
-        imagVisibile++;
+        }else{
+          imagVisibile++;  
+        }
+
+
+        
         listaImage[imagVisibile].classList.add('show');
         imgAttiva[imagVisibile].classList.add('attiva');
 
-        indietro.classList.remove('hidden');
+       
+       
+       
+       /*parte del codice risponsabile di far spari le frecce
+         indietro.classList.remove('hidden');
         if (imagVisibile == listaImage.length - 1) {
             avanti.classList.add('hidden');
 
-        }
+        }*/
 
 
 
@@ -83,27 +96,44 @@ indietro.addEventListener('click',
     function () {
         listaImage[imagVisibile].classList.remove('show');
         imgAttiva[imagVisibile].classList.remove('attiva');
+        
+        if(imagVisibile == 0){
+            imagVisibile = images.length-1
 
-        imagVisibile--;
+        }else{
+            imagVisibile--;
+        }    
+        
+        
         listaImage[imagVisibile].classList.add('show');
         imgAttiva[imagVisibile].classList.add('attiva');
+
+         
+
+       /*parte del codice risponsabile di far spari le frecce
 
         avanti.classList.remove('hidden')
         if (imagVisibile == 0) {
             indietro.classList.add('hidden')
 
-        }
+        }*/
 
     }
 )
 
+/*let intervallo = null;
+let step = 1
+const start =() => {
+    intervallo = setInterval(function(){
+        miniImagDom.scrollLeft = miniImagDom.scrollLeft + step;
+         
+        
 
+    },10);
 
+};
 
-
-
-
-
+start ()*/
 
 
 
